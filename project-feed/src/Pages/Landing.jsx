@@ -7,12 +7,15 @@ const useStyles = makeStyles(() => ({
   Landing: {
     backgroundImage: `url(${background})`,
     backgroundSize: "cover",
-    width: "100%",
-    height: "100%",
+    backgroundAttachment: 'fixed',
+  },
+  fullsize: {
+    width: '100%',
+    height: '100%',
   },
   center: {
     margin: "0",
-    position: "absolute",
+    position: "relative",
     top: "50%",
     left: "50%",
     msTransform: "translate(-50%, -50%)",
@@ -24,14 +27,16 @@ const Landing = () => {
   const classes = useStyles();
 
   return (
-  <div className={classes.Landing}>
-    <div className={classes.center}>
-      <h1>RBC Impact Project</h1>
-      <a class="btn btn-ghost" href="#">Volunteer</a>
-      <a class="btn btn-ghost" href="#">Organization</a>
+    <div className={`${classes.Landing} ${classes.fullsize}`}>
+      <div className={classes.fullsize}>
+        <div className={classes.center}>
+          <h1>RBC Impact Project</h1>
+          <a className='btn' href="/volunteer-signup">Volunteer</a>
+          <a className='btn' href="/org-signup">Organization</a>
+        </div>
+      </div>
+      <LocationListings />
     </div>
-    <LocationListings />
-  </div>
   );
 };
 
