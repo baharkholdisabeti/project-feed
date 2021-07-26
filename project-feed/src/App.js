@@ -3,8 +3,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import NavBar from './Components/NavBar';
 import About from './Pages/About';
 import Landing from './Pages/Landing';
-import OrgSignup from './Pages/OrgSignup';
-import VolunteerSignup from './Pages/VolunteerSignUp';
+import { OrgSignup, VolunteerSignup } from './Pages/Signup';
 
 function App() {
   return (
