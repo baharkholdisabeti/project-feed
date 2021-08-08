@@ -9,14 +9,16 @@ import { OrgSignup, VolunteerSignup } from './Pages/Signup';
 function App() {
   const [state, setState] = useState([]);
   useEffect(() => {
-      fetch("/api/restaurants")
+      fetch("http://localhost:9000/restaurants")
         .then(res => res.text())
         .then(res => setState({ apiResponse: res }));
   });
+  // console.log(state.apiResponse);
 
   return (
     <div className="App">
-      <Router>
+      {state.apiResponse}
+      {/* <Router>
         <NavBar />  
 
         <Switch>
@@ -36,7 +38,7 @@ function App() {
             <Landing />
           </Route>
         </Switch>
-      </Router>
+      </Router> */}
     </div>
   );
 }
