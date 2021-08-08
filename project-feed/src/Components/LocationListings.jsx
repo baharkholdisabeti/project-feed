@@ -32,7 +32,8 @@ const FormRow = () => {
   );
 }
 
-const LocationListings = () => {
+const LocationListings = (props) => {
+  const restaurants = props[0];
   return (
     <Grid container spacing={1}>
       <Grid container item xs={12} spacing={3}>

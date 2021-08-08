@@ -23,11 +23,13 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const Landing = () => {
+const Landing = (props) => {
+  const restaurants = props[0];
   const classes = useStyles();
 
   return (
     <div className={`${classes.Landing} ${classes.fullsize}`}>
+      <div>{restaurants}</div>
       <div className={classes.fullsize}>
         <div className={classes.center}>
           <h1>RBC Impact Project</h1>
@@ -35,7 +37,7 @@ const Landing = () => {
           <a className='btn' href="/org-signup">Organization</a>
         </div>
       </div>
-      <LocationListings />
+      <LocationListings>{restaurants}</LocationListings>
     </div>
   );
 };

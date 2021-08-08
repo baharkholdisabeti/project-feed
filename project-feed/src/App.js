@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import './App.css';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import NavBar from './Components/NavBar';
@@ -6,6 +7,13 @@ import Landing from './Pages/Landing';
 import { OrgSignup, VolunteerSignup } from './Pages/Signup';
 
 function App() {
+  const [state, setState] = useState([]);
+  useEffect(() => {
+      fetch("/api/restaurants")
+        .then(res => res.text())
+        .then(res => setState({ apiResponse: res }));
+  });
+
   return (
     <div className="App">
       <Router>
@@ -13,7 +21,7 @@ function App() {
 
         <Switch>
           <Route path="/home">
-            <Landing />
+            <Landing>{state.apiResponse}</Landing>
           </Route>
           <Route path="/about">
             <About />
