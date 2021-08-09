@@ -13,17 +13,15 @@ function App() {
         .then(res => res.text())
         .then(res => setState({ apiResponse: res }));
   });
-  // console.log(state.apiResponse);
 
   return (
     <div className="App">
-      {state.apiResponse}
-      {/* <Router>
+      <Router>
         <NavBar />  
-
+        
         <Switch>
           <Route path="/home">
-            <Landing>{state.apiResponse}</Landing>
+            <Landing restaurants={state.apiResponse}/>
           </Route>
           <Route path="/about">
             <About />
@@ -38,7 +36,7 @@ function App() {
             <Landing />
           </Route>
         </Switch>
-      </Router> */}
+      </Router>
     </div>
   );
 }

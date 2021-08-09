@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import SingleListing from './SingleListing';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,38 +15,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FormRow = () => {
-  const classes = useStyles();
-  
-  return (
-    <React.Fragment>
-      <Grid item xs={4}>
-        <Paper className={classes.paper}>item</Paper>
-      </Grid>
-      <Grid item xs={4}>
-        <Paper className={classes.paper}>item</Paper>
-      </Grid>
-      <Grid item xs={4}>
-        <Paper className={classes.paper}>item</Paper>
-      </Grid>
-    </React.Fragment>
-  );
-}
 
 const LocationListings = (props) => {
-  const restaurants = props[0];
+  const restaurants = props.restaurants;
+  if (!restaurants) return null;
   return (
-    <Grid container spacing={1}>
-      <Grid container item xs={12} spacing={3}>
-        <FormRow />
-      </Grid>
-      <Grid container item xs={12} spacing={3}>
-        <FormRow />
-      </Grid>
-      <Grid container item xs={12} spacing={3}>
-        <FormRow />
-      </Grid>
-    </Grid>
+    <div>
+      {Array.from(restaurants).map(restaurant => {
+        return <div className='col-lg-4' key={restaurant.id}>
+          <SingleListing restaurant={restaurant}/>
+        </div>
+      })}
+    </div>
   );
 }
 
