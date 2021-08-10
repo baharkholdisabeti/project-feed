@@ -15,18 +15,38 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const FormRow = (props) => {
+  const threeRestaurants = props.threeRestaurants;
+  const classes = useStyles();
+  
+  return (
+    <React.Fragment>
+      {threeRestaurants.map(loc => {
+        return (<Grid item xs={4}>
+          <Paper className={classes.paper}>{loc}</Paper>
+        </Grid>);
+      })}
+    </React.Fragment>
+  );
+}
 
 const LocationListings = (props) => {
-  const restaurants = props.restaurants;
+  const restaurantLocs = props.restaurants;
+  if (!restaurantLocs) return null;
+  const restaurants = Array.from(restaurantLocs);
   if (!restaurants) return null;
+  let restaurantGroups = [];
+  for(let i = 0, j = restaurants.length; i<j; i+=3){
+    restaurantGroups.push(restaurants.slice(i, i + 3));
+  }
   return (
-    <div>
-      {Array.from(restaurants).map(restaurant => {
-        return <div className='col-lg-4' key={restaurant.id}>
-          <SingleListing restaurant={restaurant}/>
-        </div>
+    <Grid container spacing={1}>
+      {restaurantGroups.map((group) => {
+        return (<Grid container item xs={12} spacing={3}>
+          <FormRow threeRestaurants={group}/>
+        </Grid>)
       })}
-    </div>
+    </Grid>
   );
 }
 

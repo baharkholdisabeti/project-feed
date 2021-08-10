@@ -27,7 +27,6 @@ const Landing = (props) => {
   const restaurants = props.restaurants;
   const classes = useStyles();
 
-  if (!restaurants) return null;
   return (
     <div className={`${classes.Landing} ${classes.fullsize}`}>
       <div className={classes.fullsize}>
