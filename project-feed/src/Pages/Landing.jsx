@@ -1,7 +1,8 @@
 import React from 'react';
-import background from '../assets/vegetables.png'
+import background from '../assets/background.png'
 import { makeStyles } from '@material-ui/core/styles';
 import LocationListings from '../Components/LocationListings'
+import Button from 'react-bootstrap/Button'
 
 const useStyles = makeStyles(() => ({
   Landing: {
@@ -31,9 +32,9 @@ const Landing = (props) => {
     <div className={`${classes.Landing} ${classes.fullsize}`}>
       <div className={classes.fullsize}>
         <div className={classes.center}>
-          <h1>RBC Impact Project</h1>
-          <a className='btn' href="/volunteer-signup">Volunteer</a>
-          <a className='btn' href="/org-signup">Organization</a>
+          <h1 style={{color: "green" , fontSize:"50px"}}>Project Feed Canada</h1>
+          <Button variant="outline-success" style ={{margin: "15px"}}href="/volunteer-signup">Volunteer</Button>
+          <Button variant="outline-success" href="/org-signup">Organization</Button>
         </div>
       </div>
       <LocationListings>{restaurants}</LocationListings>
