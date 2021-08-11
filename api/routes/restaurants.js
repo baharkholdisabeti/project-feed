@@ -1,6 +1,7 @@
 var express = require('express');
 const router = require('express-promise-router')();
 const { MongoClient } = require('mongodb');
+require('dotenv').config()
 
 router.get('/', async function(req, res, next) {
     const uri = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASS}@${process.env.DBURL}?retryWrites=true&w=majority`;

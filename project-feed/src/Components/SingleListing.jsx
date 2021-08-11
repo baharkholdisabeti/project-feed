@@ -12,7 +12,7 @@ const SingleListing = (props) => {
   const restaurant = props.children;
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: ''
+    googleMapsApiKey: 'process.env.REACT_APP_MAPSKEY'
   })
 
   const marker = {
