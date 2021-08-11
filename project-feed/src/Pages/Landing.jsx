@@ -36,7 +36,7 @@ const Landing = (props) => {
           <a className='btn' href="/org-signup">Organization</a>
         </div>
       </div>
-      <LocationListings restaurants={restaurants}/>
+      <LocationListings>{restaurants}</LocationListings>
     </div>
   );
 };
