@@ -9,7 +9,7 @@ import { OrgSignup, VolunteerSignup } from './Pages/Signup';
 function App() {
   const [state, setState] = useState([]);
   useEffect(() => {
-      fetch("https://project-feed-backend.herokuapp.com/")
+      fetch("https://project-feed-backend.herokuapp.com/restaurants")
         .then(res => res.text())
         .then(res => setState({ apiResponse: res }));
   });
