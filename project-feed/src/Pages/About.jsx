@@ -35,15 +35,14 @@ const About = () => {
       <div classname={classes.fullsize}>
           <h1>About Project Feed</h1>
           <div style={{ margin: "20px" }}>
-            <Card border="success" bg={'success'}   style={{paddingTop: '2rem' , paddingLeft: '2rem', paddingRight: '2rem', width:'110rem', marginLeft: '5rem'}}>
-              <Card.Title> Project Feed has been created by a group of interns at RBC under the Believe Impact Program hosted by Sarah Wells, a Candian Olympian Athelete</Card.Title>
-              <Card.Text>
-                Through this intitative, we want to make a difference in our communities.
+            <h2> Project Feed has been created by a group of interns at RBC under the Believe Impact Program hosted by Sarah Wells, a Candian Olympian Athelete</h2>
+            <p style={{fontSize: "20px"}}>
+            Through this intitative, we want to make a difference in our communities.
                 Food Insecurity has been a long running problem in the world today. We believe that everyone has the right to a fresh nice meal every day, no matter their circumstances. In today's time. fast food resturances and business dispose of thousands of unsold, perishable food. Our goal at Project Feed is to partner with resturants to help distribute this food to those in need instead of having it go to waste. Even one mean given away can make a huge difference. Slowly Project Feed can really help make sure there are no hungry stomachs left.
                 With the help of our Partners ot provide us with resources, and our amazing Volunteers to distribute the meals, we will be able to improve food security one meal at a time.
-              </Card.Text>
-              <Card.Footer>ProjectFeedCanada</Card.Footer>
-            </Card>
+
+            </p>
+
         </div>
         <div style={{ margin: "50px" }}>
           <h1>How Project Feed Works</h1>
@@ -62,7 +61,7 @@ const About = () => {
               <Card.Body>
                 <Card.Title  style={{ color: 'green', fontSize: '4rem'}}>2</Card.Title>
                 <Card.Text style={{ fontSize: '1.2rem' }}>
-                Volunteers (public individuals or other organizations) are notified on our website about the avaliable food at one of our!{' '}
+                Volunteers (public individuals or other organizations) are notified on our website about the avaliable food at one of our locations!{' '}
                 </Card.Text>
               </Card.Body>
             </Card>
